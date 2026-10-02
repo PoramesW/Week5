@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color-scheme: light;
+  }
+
+  :root.dark, .dark {
+    color-scheme: dark;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* 3D Card Flip styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Reduced Motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .perspective-1000 {
+    perspective: none !important;
+  }
+
+  .transform-style-3d {
+    transform-style: flat !important;
+  }
+
+  .rotate-y-180 {
+    transform: none !important;
+  }
+}
+
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+.reduced-motion .transform-style-3d {
+  transform-style: flat !important;
+}
+
+.reduced-motion .rotate-y-180 {
+  transform: none !important;
+}
+
+/* Forced Colors / High Contrast Support */
+@media (forced-colors: active) {
+  .forced-colors-border {
+    border: 2px solid ButtonBorder !important;
+  }
+  
+  .card-matched-indicator {
+    border: 3px solid Highlight !important;
+  }
+}

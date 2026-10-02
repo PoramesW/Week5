@@ -1,0 +1,7 @@
+{
+  "name": "Color Match",
+  "description": "Color Match - A fast-paced, accessible card-matching puzzle game with Easy, Medium, and Hard difficulty levels.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
